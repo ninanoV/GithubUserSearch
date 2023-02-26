@@ -3,6 +3,8 @@
 
 Github API를 이용하여 Github 유저를 검색하고 클릭시 Dialog를 통해 레파지토리 리스트를 볼 수 있습니다.
 
+MVVM 방식으로 hilt, paging3, retrofit, glide가 사용되었습니다.
+
 Configuration
 ---------------------
 local.properties 파일에 github token을 추가하여야 합니다.
