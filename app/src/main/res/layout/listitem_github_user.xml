@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="user" type="com.ninanok.githubusersearch.rest.response.data.UserDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_github_user_avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            imageUrl="@{user.avatar_url}"
+            tool:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:contentDescription="@string/github_user_icon" />
+
+        <TextView
+            android:id="@+id/tv_github_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_max="200dp"
+            android:layout_marginStart="10dp"
+            tool:text="Linus Torvalds"
+            android:text="@{user.name}"
+            android:textSize="16sp"
+            android:textColor="@color/teal_700"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="@{user.nullValueVisibilityIsGone(user.email)}"
+            app:layout_constraintTop_toTopOf="@id/iv_github_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/iv_github_user_avatar"
+            app:layout_constraintLeft_toRightOf="@id/iv_github_user_avatar"/>
+
+        <TextView
+            android:id="@+id/tv_github_user_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tool:text="torvalds"
+            android:text="@{user.login}"
+            android:textSize="16sp"
+            android:textColor="@color/colorGrey"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@id/iv_github_user_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/iv_github_user_avatar"
+            app:layout_constraintLeft_toRightOf="@id/tv_github_user_name"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_github_user_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            tool:text="Linus Torvalds created the Linux kernel and oversees open source development of the widely-used Linux operating system."
+            android:text="@{user.bio}"
+            android:textSize="16sp"
+            android:textColor="@color/colorBlack"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:visibility="@{user.nullValueVisibilityIsGone(user.email)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_github_user_id"
+            app:layout_constraintLeft_toRightOf="@id/iv_github_user_avatar"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_github_user_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            tool:text="tjdgus4545@gmail.com"
+            android:text="@{user.email}"
+            android:textSize="14sp"
+            android:textColor="@color/colorGrey"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="@{user.nullValueVisibilityIsGone(user.email)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_github_user_bio"
+            app:layout_constraintLeft_toRightOf="@id/iv_github_user_avatar"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_github_user_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10dp"
+            tool:text="Portland, OR"
+            android:text="@{user.location}"
+            android:textSize="14sp"
+            android:textColor="@color/colorGrey"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="@{user.nullValueVisibilityIsGone(user.email)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_github_user_email"
+            app:layout_constraintLeft_toRightOf="@id/iv_github_user_avatar"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

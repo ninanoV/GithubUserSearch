@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GithubUserSearch</string>
+    <string name="github_user_icon">github_user_icon</string>
+    <string name="github_user_search_hint">유저명을 입력해주세요.</string>
+    <string name="repo_stargazers_count">☆ %1$d</string>
+    <string name="search_icon">search_icon</string>
+</resources>
