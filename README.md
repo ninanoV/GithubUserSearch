@@ -11,6 +11,14 @@ local.properties 파일에 github token을 추가하여야 합니다.
 ```properties
 github.token="<YOUR_GITHUB_TOKEN_HERE>"
 ```
+
+Screen
+---------------------
+|Search|Repository|
+|---|---|
+|![search](https://user-images.githubusercontent.com/11027538/221418878-0e5f3981-ddce-4d32-b87b-620f1ac015d1.jpeg)|![repo](https://user-images.githubusercontent.com/11027538/221418872-4be7127e-8a0d-467f-b013-aee5d560eef9.jpeg)|
+
+
 Project File Tree
 ---------------------
 ```bash
